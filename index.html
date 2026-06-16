@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creativ-in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Variabel Warna */
+        :root {
+            --color-primary: #f8c8dc;
+            --color-secondary: #ff69b4;
+            --color-text: #333;
+            --color-background: #ea9999;
+            --color-light-bg: #f5f5f5;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background-color: var(--color-background);
+            background-image: url('BG.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--color-text);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        p {
+            text-align: center;
+            margin: 0;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.22);
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.45);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 24px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+            transition: transform 0.35s ease;
+        }
+
+        .hero-content p {
+            color: var(--color-text);
+            font-size: 1.35rem;
+            line-height: 1.8;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        #layanan {
+            background-color: rgba(255, 255, 255, 0.92);
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .service-item {
+            background-color: white;
+            padding: 24px 18px;
+            border-radius: 18px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+            text-align: center;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .service-item:hover {
+            transform: translateY(-6px);
+            background-color: var(--color-primary);
+            color: #222;
+        }
+
+        #galeri {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .gallery-placeholder {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+            min-height: 220px;
+            background: #f4d9e6;
+        }
+
+        .gallery-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .gallery-placeholder img:hover {
+            transform: scale(1.05);
+        }
+
+        #kontak {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 18px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .gform-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            border-radius: 14px;
+            border: 2px solid var(--color-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 40px;
+            padding: 0 15px;
+        }
+
+        .contact-box {
+            text-align: center;
+            padding: 24px;
+            border: 1px solid rgba(255, 200, 220, 0.9);
+            border-radius: 18px;
+            flex: 1 1 240px;
+            max-width: 300px;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            color: var(--color-secondary);
+            font-size: 1.1rem;
+        }
+
+        .contact-box a {
+            text-decoration: none;
+            color: var(--color-text);
+            transition: color 0.25s ease;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            color: #b51666;
+        }
+
+        footer {
+            background-color: var(--color-secondary);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                padding: 60px 16px;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .gform-wrapper {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.3em;
+            }
+
+            .container {
+                padding: 24px 0;
+            }
+
+            .services-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-box {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .hero {
+                min-height: 320px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo">
+                <img src="LOGO.png" alt="Logo Creative-in">
+            </div>
+            <h1>Creative-in Agency</h1>
+            <p class="tagline">Layanan agensi lengkap untuk brand Anda, mulai dari desain grafis, video promosi, hingga konten sosial media.</p>
+        </div>
+    </header>
+
+    <section id="layanan" class="container">
+        <h2>Layanan Premium Agensi Kami</h2>
+        <div class="services-grid">
+            <a href="editing-video.html" class="service-item">Editing Video Promosi</a>
+            <a href="desain-grafis.html" class="service-item">🎨 Desain Grafis</a>
+            <a href="weding.html" class="service-item">📷 Prewedding / Photoshoot</a>
+            <a href="wisuda.html" class="service-item">🎓 Foto Wisuda / Yearbook</a>
+            <a href="konten-sosial.html" class="service-item"> 📱 Konten Instagram/Tiktok</a>
+            <a href="brosur.html" class="service-item"> 🖨️ Cetak Brosur / Stiker</a>
+            <a href="merchandise.html" class="service-item">👕 Merchandise Sederhana</a>
+            <a href="Logo.html" class="service-item">🎨 Logo Design</a>
+        </div>
+    </section>
+
+    <section id="galeri" class="container">
+        <h2>Portofolio & Hasil Karya</h2>
+        <p>Lihat lebih banyak transformasi estetik kami di Instagram Creative-in.</p>
+        <div class="gallery-grid">
+            <div class="gallery-placeholder">
+                <img src="salma2.jpg" alt="Hasil portofolio 1">
+            </div>
+            <div class="gallery-placeholder">
+                <img src="salma3.jpg" alt="Hasil portofolio 2">
+            </div>
+            <div class="gallery-placeholder">
+                <img src="salma4.jpg" alt="Hasil portofolio 3">
+            </div>
+            <div class="gallery-placeholder">
+                <img src="salma5.jpg" alt="Hasil portofolio 4">
+            </div>
+            <div class="gallery-placeholder">
+                <img src="salma6.jpg" alt="Hasil portofolio 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKSI KONTAK & FORMULIR INTEGRASI -->
+    <section id="kontak" class="container">
+        <h1>JANGAN LUPA HUBUNGI KAMI</h1>
+        <h2>Pesan Paket Agensi Kami</h2>
+        
+        <!-- INTEGRASI GOOGLE FORM -->
+        <div class="form-container">
+            <div class="gform-wrapper">
+                <!-- Ganti link src di bawah ini dengan link 'Sematkan/Embed' Google Form Anda -->
+                <iframe 
+                    src="URL_GOOGLE_FORM_ANDA_DISINI?embedded=true" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    style="border: none;">
+                    Memuat formulir…
+                </iframe>
+            </div>
+        </div>
+
+        <div class="contact-details">
+            <div class="contact-box">
+                <h3>Hubungi Kami (WhatsApp)</h3>
+                <p><a href="https://wa.me/628812929855" target="_blank">08812929855</a></p>
+            </div>
+            <div class="contact-box">
+                <h3>Instagram</h3>
+                <p><a href="https://www.instagram.com/umang.verse/" target="_blank">Umang.verse</a></p>
+            </div>
+            <div class="contact-box">
+                <h3>Lokasi</h3>
+                <p style="font-weight: 600; color: var(--color-text);">Purbalingga, Indonesia</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Creative-in &copy; 2026 | Pesona Aura Cantik Brand Terpancar</p>
+    </footer>
+
+</body>
+</html>

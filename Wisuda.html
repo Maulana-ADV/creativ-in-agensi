@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Wisuda | Creativ-in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #f8c8dc;
+            --color-secondary: #ff69b4;
+            --color-text: #333;
+            --color-background: #ea9999;
+            --color-light-bg: #f5f5f5;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background-color: var(--color-background);
+            background-image: url('BG.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--color-text);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            text-align: left;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin: 0;
+        }
+
+        .page-header {
+            background: rgba(255, 255, 255, 0.22);
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.45);
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-link {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color-secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .detail-grid {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .foto-section {
+            flex: 1 1 350px;
+            background-color: var(--color-light-bg);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-section {
+            flex: 1 1 300px;
+        }
+
+        .foto-placeholder {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1em;
+            background-image: url('wisuda_sample.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 24px;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        .info-box ul li::before {
+            content: '🌸';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-size: 0.8em;
+        }
+
+        .info-box h3 {
+            text-align: left;
+        }
+
+        .cta-buttons {
+            text-align: center;
+            margin-top: 40px;
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 30px;
+            border-radius: 18px;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 30px;
+            margin: 0 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .wa-button {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .wa-button:hover {
+            background-color: #128C7E;
+        }
+
+        .ig-button {
+            background-color: var(--color-secondary);
+            color: white;
+            border: 2px solid var(--color-secondary);
+        }
+
+        .ig-button:hover {
+            background-color: white;
+            color: var(--color-secondary);
+        }
+
+        footer {
+            background-color: var(--color-secondary);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2.3em;
+            }
+
+            .container {
+                padding: 24px 0;
+            }
+
+            .detail-grid {
+                flex-direction: column;
+            }
+
+            .foto-section, .info-section {
+                flex: 1 1 100%;
+            }
+
+            .foto-placeholder {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cta-buttons a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <a href="Creativ-in.html" class="back-link">← Kembali ke Layanan</a>
+        <h1>🎓 Graduation Creative Package</h1>
+    </div>
+
+    <div class="container">
+        
+        <div class="detail-grid">
+            
+            <div class="foto-section">
+                <div class="foto-placeholder"></div>
+            </div>
+            
+            <div class="info-section">
+                
+                <div class="info-box">
+                    <h3>💰 Harga Paket</h3>
+                    <p style="text-align: left; font-size: 1.8em; color: var(--color-secondary); font-weight: 700;">
+                        Mulai dari: IDR 250K
+                    </p>
+                    <p style="text-align: left; font-size: 0.9em;">
+                        *Harga paket bervariasi sesuai dengan jenis produk custom, jumlah cetak fisik, maupun durasi sesi dokumentasi media sosial yang dipilih.
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <h3>✅ Persyaratan & Ketentuan</h3>
+                    <ul>
+                        <li><span style="font-weight: 600;">DP:</span> Pemesanan atau pembuatan janji jadwal pengerjaan divalidasi setelah pembayaran uang muka minimal IDR 100K.</li>
+                        <li><span style="font-weight: 600;">Data Kelulusan:</span> Klien diwajibkan mengirimkan nama lengkap beserta gelar, foto resolusi tinggi, serta detail nama instansi/universitas secara akurat.</li>
+                        <li><span style="font-weight: 600;">Waktu Produksi:</span> Proses pembuatan desain vektor wajah, layout album, atau merchandise hadiah wisuda memerlukan waktu 3-5 hari sebelum hari H kelulusan.</li>
+                        <li><span style="font-weight: 600;">Pengambilan/Kirim:</span> Harga tertera belum termasuk biaya ongkos kirim jika produk fisik ingin dikirim langsung ke alamat rumah atau lokasi wisuda.</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <h3>🎁 Termasuk dalam Paket</h3>
+                    <ul>
+                        <li>Layanan pembuatan desain ilustrasi wajah (*Vector/Vexel Art*) bertema wisuda yang dikemas rapi.</li>
+                        <li>File cetak kualitas tinggi (*High-Resolution*) untuk plakat, selempang custom, atau poster kenang-kenangan.</li>
+                        <li>*Bonus:* File digital siap unggah dengan format aspek rasio pas untuk kebutuhan pamer di konten Instagram Stories atau Feed.</li>
+                        <li>Pilihan paket tambahan untuk dokumentasi cinematic singkat berdurasi 15-30 detik pada saat momen penyematan toga.</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="cta-buttons">
+            <p>Ingin mengabadikan momen kelulusanmu dengan produk desain kado yang unik dan konten media sosial yang aesthetic? Hubungi kami sekarang!</p>
+            <a href="https://wa.me/628812929855" target="_blank" class="wa-button">
+                📞 Hubungi Via WhatsApp
+            </a>
+            <a href="https://www.instagram.com/umang.verse/" target="_blank" class="ig-button">
+                📸 Lihat IG Kami
+            </a>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>Creativ-in &copy; 2026 | Kreativitas Tanpa Batas</p>
+    </footer>
+
+</body>
+</html>

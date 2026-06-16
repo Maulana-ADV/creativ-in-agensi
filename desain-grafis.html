@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan: Desain Grafis | Creativ-in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Variabel Warna */
+        :root {
+            --color-primary: #f8c8dc;
+            --color-secondary: #ff69b4;
+            --color-text: #333;
+            --color-background: #ea9999;
+            --color-light-bg: #f5f5f5;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* BASE STYLES */
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background-color: var(--color-background);
+            background-image: url('BG.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px; /* Diperlebar agar sejajar dengan halaman layanan lainnya */
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--color-secondary);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 { font-size: 2.5em; }
+        h3 { font-size: 1.5em; text-align: left; border-bottom: 2px solid var(--color-primary); padding-bottom: 5px; }
+        
+        /* HEADER KHUSUS PAGE INI */
+        .page-header {
+            background-color: rgba(255, 255, 255, 0.22);
+            padding: 40px 20px;
+            position: relative;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.45);
+            z-index: 1;
+        }
+        .page-header h1 {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .back-link {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color-secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* DETAIL GRID */
+        .detail-grid {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .foto-section {
+            flex: 1 1 350px;
+            background-color: var(--color-light-bg);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column; /* Menjaga tinggi kolom seimbang */
+        }
+        .info-section {
+            flex: 1 1 300px;
+        }
+        
+        /* IMAGE PLACEHOLDER STYLES */
+        .foto-placeholder {
+            flex: 1;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1em;
+            
+            background-image: url('desain_sample.jpg'); 
+            background-size: contain; /* Gambar mockup desain utuh di tengah tanpa terpotong */
+            background-position: center center;
+            background-repeat: no-repeat;
+            
+            color: white;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* INFO BOXES */
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 24px;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+        }
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .info-box ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-weight: 400;
+            text-align: left;
+        }
+        .info-box ul li::before {
+            content: '🌸';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-size: 0.8em;
+        }
+
+        /* CTA BUTTONS */
+        .cta-buttons {
+            text-align: center;
+            margin-top: 40px;
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 30px;
+            border-radius: 18px;
+        }
+        .cta-buttons p {
+            margin-bottom: 15px;
+        }
+        .cta-buttons a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 30px;
+            margin: 0 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .wa-button {
+            background-color: #25D366;
+            color: white;
+        }
+        .wa-button:hover {
+            background-color: #128C7E;
+        }
+        .ig-button {
+            background-color: var(--color-secondary);
+            color: white;
+            border: 2px solid var(--color-secondary);
+        }
+        .ig-button:hover {
+            background-color: white;
+            color: var(--color-secondary);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--color-secondary);
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        /* RESPONSIVE ADJUSTMENTS */
+        @media (max-width: 768px) {
+            .detail-grid {
+                flex-direction: column;
+            }
+            .foto-section, .info-section {
+                flex: 1 1 100%;
+            }
+            .foto-placeholder {
+                height: 300px;
+                min-height: 300px;
+            }
+            .back-link {
+                margin-left: 0;
+                padding-left: 20px;
+            }
+            .cta-buttons a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <a href="Creativ-in.html" class="back-link">← Kembali ke Layanan</a>
+        <h1>🎨 Jasa Desain Grafis Kustom</h1>
+    </div>
+
+    <div class="container">
+        
+        <div class="detail-grid">
+            
+            <div class="foto-section">
+                <div class="foto-placeholder"></div>
+            </div>
+            
+            <div class="info-section">
+                
+                <div class="info-box">
+                    <h3>💰 Harga Paket</h3>
+                    <p style="text-align: left; font-size: 1.8em; color: var(--color-secondary); font-weight: 700;">
+                        Mulai dari: IDR 200K
+                    </p>
+                    <p style="text-align: left; font-size: 0.9em;">
+                        *Harga menyesuaikan dengan jenis kebutuhan media (Desain Logo, Poster, Banner, Merchandising) serta kerumitan konsep visual.
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <h3>✅ Persyaratan & Ketentuan</h3>
+                    <ul>
+                        <li><span style="font-weight: 600;">DP:</span> Pembayaran uang muka (down payment) minimal sebesar 50% untuk memulai tahap penggalian ide kreatif.</li>
+                        <li><span style="font-weight: 600;">Waktu:</span> Klien diwajibkan memberikan brief acuan desain secara lengkap dan jelas di awal diskusi projek.</li>
+                        <li><span style="font-weight: 600;">Revisi:</span> Bebas mengajukan maksimal 3 kali revisi minor setelah draf rancangan awal diserahkan.</li>
+                        <li><span style="font-weight: 600;">Hak Cipta:</span> Hak kepemilikan penuh dan file master final diserahkan seutuhnya kepada klien setelah pelunasan biaya.</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <h3>🎁 Termasuk dalam Paket</h3>
+                    <ul>
+                        <li>Rancangan konsep desain orisinal yang kreatif dan fungsional.</li>
+                        <li>Pilihan alternatif pilihan skema warna (Color Palette) dan tipografi (*font*).</li>
+                        <li>Master file resolusi tinggi format siap cetak/digital (.AI / .CDR / .PSD / .PDF).</li>
+                        <li>*Bonus:* Presentasi visual desain dalam bentuk mockup produk 3D komersial.</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="cta-buttons">
+            <p>Butuh solusi visual kreatif untuk menunjang branding bisnismu? Hubungi kami sekarang!</p>
+            <a href="https://wa.me/628812929855" target="_blank" class="wa-button">
+                📞 Pesan Via WhatsApp
+            </a>
+            <a href="https://www.instagram.com/umang.verse/" target="_blank" class="ig-button">
+                📸 Lihat IG Kami
+            </a>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>Creativ-in &copy; 2026 | Kreativitas Tanpa Batas</p>
+    </footer>
+
+</body>
+</html>
